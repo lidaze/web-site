@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div style={{ fontSize: 200 }}>JOYFUL</div>
+      <div style={{ fontSize: 300, color: '#fafafa#', letterSpce: '2px' }}>JOYFUL</div>
     </div>
   )
 }
