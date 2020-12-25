@@ -1,0 +1,13 @@
+.container {
+  padding: 24px;
+  grid-column: span 24;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid #f0f0f0;
+
+  font-size: 12px;  
+}
+
