@@ -1,18 +1,12 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Index.module.scss";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div
-        style={{
-          fontSize: 50,
-          color: "#fafafa",
-          letterSpacing: "20px",
-          fontWeight: "bold"
-        }}
-      >
-        JOYFUL
+      <div>
+        <p style={{ fontSize: 300, textAlign: "center", letterSpacing: 8 }}>
+          JOYFUL
+        </p>
       </div>
     </div>
   );
