@@ -26,11 +26,11 @@ const Blog: React.FC<BlogProps> = ({ slug }) => {
   }, [slug]);
 
   if (loading) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   if (data === null) {
-    return "NONE";
+    return <div>NONE</div>;
   }
 
   return (

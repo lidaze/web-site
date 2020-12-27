@@ -25,11 +25,11 @@ const Blog: React.FC<BlogProps> = () => {
   }, []);
 
   if (loading) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   if (data === null) {
-    return "NONE";
+    return <div>NONE</div>;
   }
 
   return (
