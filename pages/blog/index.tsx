@@ -2,27 +2,34 @@ import React, { memo, useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../../styles/Blog.module.scss";
 
-interface BlogProps {}
+interface BlogProps {
+  data: {
+    id: string;
+    slug: string;
+    title: string;
+    description: string;
+  }[];
+}
 
-const Blog: React.FC<BlogProps> = () => {
-  const [data, setData] = useState(null);
+const Blog: React.FC<BlogProps> = ({ data }) => {
+  // const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
   console.count("Blog");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const res = await fetch("/api/posts");
-      const data = await res.json();
-      console.log(data);
-      if (data.status === 200) {
-        setData(data.data);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     const res = await fetch("/api/posts");
+  //     const data = await res.json();
+  //     console.log(data);
+  //     if (data.status === 200) {
+  //       setData(data.data);
+  //     }
+  //     setLoading(false);
+  //   };
+  //   fetchData();
+  // }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -46,20 +53,28 @@ const Blog: React.FC<BlogProps> = () => {
   );
 };
 
-// export const getStaticProps = async (props) => {
-//   console.log(props);
-//   const res = await fetch("http://localhost:3000/api/posts");
-//   const data = await res.json();
-//   console.log(data);
-//   // if (data.status === 200) {
-//   //   setData(data.data);
-//   // }
+export const getStaticProps = async (props) => {
+  console.log(props);
+  // const res = await fetch("http://localhost:3000/api/posts");
+  // const data = await res.json();
+  const userKey = "joyful";
+  const postKey = "tdnx2e";
+  const token = "aPLzrTRapohImKwomnZ30FDuZX1KGoMeA6fSZwF7";
 
-//   return {
-//     props: {
-//       ...data
-//     }
-//   };
-// };
+  const domainStr = "https://www.yuque.com/api/v2";
+  const url = `${domainStr}/repos/${userKey}/${postKey}/docs`;
+  const res = await fetch(url, {
+    headers: {
+      "X-Auth-Token": token
+    }
+  });
+  const data = await res.json();
+
+  return {
+    props: {
+      data: data.data
+    }
+  };
+};
 
 export default memo(Blog);

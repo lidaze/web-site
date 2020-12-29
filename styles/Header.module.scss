@@ -20,6 +20,10 @@
       border-radius: 8px;
       cursor: pointer;
 
+      > a {
+        display: inline-block;
+      }
+
       &.active {
         background-color: #f0f0f0;
       }

@@ -21,9 +21,11 @@ const Blog: React.FC<HeaderProps> = () => {
       </div>
       <div className={styles.menu}>
         {routers.map(({ to, label }) => (
-          <span key={to} className={to === route ? styles.active : ""}>
-            <Link href={to}>{label}</Link>
-          </span>
+          <Link href={to}>
+            <span key={to} className={to === route ? styles.active : ""}>
+              {label}
+            </span>
+          </Link>
         ))}
       </div>
     </div>
