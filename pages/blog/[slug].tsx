@@ -5,7 +5,7 @@ interface BlogProps {
   data: { title: string; body: string };
 }
 
-const Blog: React.FC<BlogProps> = ({ data }) => {
+const Blog: React.FC<BlogProps> = ({ data = {} }) => {
   // const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
