@@ -1,3 +1,26 @@
+:root {
+  --color-text-primary: rgba(0, 0, 0, 0.85);
+  --color-text-secondary: rgba(0, 0, 0, 0.65);
+
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #fafafa;
+
+  --color-text-link: #58a6ff;
+}
+
+/* dark mode style */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #c9d1d9;
+    --color-text-secondary: #8b949e;
+
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #0d1117;
+
+    --color-text-link: #58a6ff;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -5,6 +28,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100%;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 body > div {
