@@ -6,7 +6,9 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <div className={styles.container}>
-      <Header />
+      <div className={styles.header}>
+        <Header />
+      </div>
       <div className={styles.content}>
         <Component {...pageProps} />
       </div>

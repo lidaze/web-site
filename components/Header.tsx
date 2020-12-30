@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 import styles from "../styles/Header.module.scss";
 
 const routers = [
+  { to: "/home", label: "Home" },
   { to: "/blog", label: "Blog" },
-  { to: "/about", label: "About" }
+  { to: "/articles", label: "Articles" },
+  { to: "/about", label: "About Me" }
 ];
 
 interface HeaderProps {}
