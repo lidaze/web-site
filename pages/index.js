@@ -5,7 +5,7 @@ export default function Home() {
     <div className={styles.container}>
       <div>
         <p style={{ fontSize: 100, textAlign: "center", letterSpacing: 8 }}>
-          JOYFUL
+          JOYFUL JOYFUL
         </p>
       </div>
     </div>
